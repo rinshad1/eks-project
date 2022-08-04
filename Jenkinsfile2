@@ -1,0 +1,23 @@
+pipeline{
+
+	agent any
+<<<<<<< HEAD
+=======
+
+>>>>>>> 511f0fc2d48d7e3da4e5a6ec3c9752714c6588dc
+	
+	stages {
+      
+      stage('Delete Deployment') {
+			                steps {
+				               sh 'kubectl delete deployment.apps/node-app-deployment'
+                		               sh 'kubectl delete service/node-app-service'
+				               sh 'kubectl get nodes'
+                		               sh 'kubectl get pods'
+                             		       sh 'kubectl get svc'
+			                      }
+		                      }
+	        }
+
+	
+}
