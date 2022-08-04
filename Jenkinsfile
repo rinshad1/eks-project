@@ -28,7 +28,7 @@ pipeline{
 		}
 		stage('Remove Unused docker image') {
       			steps{
-         			sh 'docker rmi $(docker images -a -q)'
+         			sh 'docker rmi rinshad11/hello_world_app:latest-v4'
 			}
     		}		
 		
