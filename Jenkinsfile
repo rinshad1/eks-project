@@ -2,6 +2,7 @@ pipeline{
 	
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred')
+		imageName = "rinshad11/hello_world_app:latest-v4"
 		}
 	agent any
 	stages {
@@ -9,7 +10,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t rinshad11/hello_world_app:latest-v4 ./nodejsapp/.'
+				sh 'docker build -t $imageName ./nodejsapp/.'
 			}
 		}
 		
@@ -23,12 +24,12 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push rinshad11/hello_world_app:latest-v4'
+				sh 'docker push $imageName'
 			}
 		}
 		stage('Remove Unused docker image') {
       			steps{
-         			sh 'docker rmi rinshad11/hello_world_app:latest-v4'
+         			sh 'docker rmi $imageName'
 			}
     		}		
 		
