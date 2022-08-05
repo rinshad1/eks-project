@@ -3,6 +3,8 @@ pipeline{
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred')
 		imageName = "rinshad11/hello_world_app:latest-v4"
+		ClusterName = "education-eks-NEAhyIJ6"
+		Region = "us-east-1"
 		}
 	agent any
 	stages {
@@ -36,7 +38,7 @@ pipeline{
 		stage('Adding nodes') {
 
 			steps {
-				sh 'aws eks update-kubeconfig --name education-eks-NEAhyIJ6 --region us-east-1'
+				sh 'aws eks update-kubeconfig --name $ClusterName --region $Region'
                
 			}
 		} 
