@@ -19,3 +19,4 @@ spec:
         image: rinshad11/hello_world_app:latest-v4
         ports:
         - containerPort: 3000
+        imagePullPolicy: Always
