@@ -35,7 +35,7 @@ pipeline{
 		stage('Adding nodes') {
 
 			steps {
-				sh 'aws eks update-kubeconfig --name education-eks-yvM5xsHH --region us-east-1'
+				sh 'aws eks update-kubeconfig --name education-eks-NEAhyIJ6 --region us-east-1'
                
 			}
 		} 
